@@ -2,6 +2,26 @@ from tkinter import *
 from tkinter import Tk, ttk
 from PIL import Image, ImageTk
 
+#Definindo Funções de cálculos
+def calcular():
+    
+    salario = float(e_valor_quantia.get())
+
+    porcentagem50 = (salario / 100) * 50
+    porcentagem30 = (salario / 100) * 30
+    porcentagem20 = (salario / 100) * 20
+
+    necessidades_valor_["text"] = (f"R$ {porcentagem50:.2f}")
+    gastos_valor_["text"] = (f"R$ {porcentagem30:.2f}")
+    inv_valor_["text"] = (f"R$ {porcentagem20:.2f}")
+
+
+
+
+
+
+
+
 #Definindo Cores
 co0 = "#2e2d2b" #Preto
 co1 = "#feffff" #Branco
@@ -62,7 +82,7 @@ valor_quantia.place(x=7, y=15)
 e_valor_quantia = Entry(frameMeio, width=10, font=("Ivy 14"), justify="center", relief="solid")
 e_valor_quantia.place(x=10, y=40)
 
-botao_calcular = Button(frameMeio, text="Calcular", width=10, height=1, font=("Ivy 10 bold"), relief="solid", overrelief="ridge")
+botao_calcular = Button(frameMeio,command=calcular, text="Calcular", width=10, height=1, font=("Ivy 10 bold"), relief="solid", overrelief="ridge")
 botao_calcular.place(x=150, y=40)
 
 #Frame de Baixo

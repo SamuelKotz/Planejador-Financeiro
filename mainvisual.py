@@ -15,13 +15,6 @@ def calcular():
     gastos_valor_["text"] = (f"R$ {porcentagem30:.2f}")
     inv_valor_["text"] = (f"R$ {porcentagem20:.2f}")
 
-
-
-
-
-
-
-
 #Definindo Cores
 co0 = "#2e2d2b" #Preto
 co1 = "#feffff" #Branco

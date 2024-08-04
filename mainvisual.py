@@ -56,6 +56,41 @@ app_logo.place(x=160, y=0)
 linha = Label(frameCima, width=295, height=1, anchor=NW, font=("Verdana 1"), bg=co3, fg=co1)
 linha.place(x=0, y=47)
 
+#Frame do Meio
+valor_quantia = Label(frameMeio, text="Qual a sua renda mensal?", height=1, anchor=NW, font=("Ivy 10 bold"), bg=co1, fg=co4)
+valor_quantia.place(x=7, y=15)
+e_valor_quantia = Entry(frameMeio, width=10, font=("Ivy 14"), justify="center", relief="solid")
+e_valor_quantia.place(x=10, y=40)
+
+botao_calcular = Button(frameMeio, text="Calcular", width=10, height=1, font=("Ivy 10 bold"), relief="solid", overrelief="ridge")
+botao_calcular.place(x=150, y=40)
+
+#Frame de Baixo
+textofixo_ = Label(frameBaixo, text="Seu orçamento dividido em 50%; 30%; 20%:  ", relief=FLAT, width=45, anchor=NW, font=("Verdana 7"), bg=co3, fg=co1)
+textofixo_.place(x=0, y=0)
+
+#Total necessidades
+necessidades_ = Label(frameBaixo, text="Necessidades:  ", relief=FLAT, width=45, anchor=NW, font=("Verdana 10"), bg=co9, fg=co0)
+necessidades_.place(x=10, y=40)
+
+necessidades_valor_ = Label(frameBaixo, relief=FLAT, width=22, anchor=NW, font=("Verdana 12"), bg=co1, fg=co4)
+necessidades_valor_.place(x=10, y=75)
+
+#Total gastos
+gastos_ = Label(frameBaixo, text="Gastos:  ", relief=FLAT, width=45, anchor=NW, font=("Verdana 10"), bg=co9, fg=co0)
+gastos_.place(x=10, y=115)
+
+gastos_valor_ = Label(frameBaixo, relief=FLAT, width=22, anchor=NW, font=("Verdana 12"), bg=co1, fg=co4)
+gastos_valor_.place(x=10, y=145)
+
+#Total investimento
+investimentos_ = Label(frameBaixo, text="Investimentos:  ", relief=FLAT, width=45, anchor=NW, font=("Verdana 10"), bg=co9, fg=co0)
+investimentos_.place(x=10, y=185)
+
+inv_valor_ = Label(frameBaixo, relief=FLAT, width=22, anchor=NW, font=("Verdana 12"), bg=co1, fg=co4)
+inv_valor_.place(x=10, y=215)
+
+
 
 
 

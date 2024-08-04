@@ -7,13 +7,17 @@ def calcular():
     
     salario = float(e_valor_quantia.get())
 
+    porcentagemdizimo = (salario / 100) * 10
     porcentagem50 = (salario / 100) * 50
     porcentagem30 = (salario / 100) * 30
-    porcentagem20 = (salario / 100) * 20
+    porcentagem10 = (salario / 100) * 10
+
 
     necessidades_valor_["text"] = (f"R$ {porcentagem50:.2f}")
     gastos_valor_["text"] = (f"R$ {porcentagem30:.2f}")
-    inv_valor_["text"] = (f"R$ {porcentagem20:.2f}")
+    inv_valor_["text"] = (f"R$ {porcentagem10:.2f}")
+    dizimo_valor_["text"] = (f"R$ {porcentagemdizimo:.2f}")
+
 
 #Definindo Cores
 co0 = "#2e2d2b" #Preto
@@ -34,7 +38,7 @@ co11 = "#f2f4f2"
 #Criando Janela
 janela = Tk()
 janela.title("")
-janela.geometry("250x400")
+janela.geometry("250x500")
 janela.configure(background=co1)
 janela.resizable(width=FALSE, height=FALSE)
 
@@ -50,7 +54,7 @@ frameCima.grid(row=0, column=0)
 frameMeio = Frame(janela, width=300, height=90, bg=co1, relief="flat")
 frameMeio.grid(row=1, column=0)
 
-frameBaixo = Frame(janela, width=300, height=290, bg=co9, relief="flat")
+frameBaixo = Frame(janela, width=300, height=360, bg=co9, relief="flat")
 frameBaixo.grid(row=2, column=0)
 
 
@@ -79,7 +83,7 @@ botao_calcular = Button(frameMeio,command=calcular, text="Calcular", width=10, h
 botao_calcular.place(x=150, y=40)
 
 #Frame de Baixo
-textofixo_ = Label(frameBaixo, text="Seu orçamento dividido em 50%; 30%; 20%:  ", relief=FLAT, width=45, anchor=NW, font=("Verdana 7"), bg=co3, fg=co1)
+textofixo_ = Label(frameBaixo, text="Seu orçamento organizado:  ", relief=FLAT, width=45, anchor=NW, font=("Verdana 10"), bg=co3, fg=co1)
 textofixo_.place(x=0, y=0)
 
 #Total necessidades
@@ -102,6 +106,13 @@ investimentos_.place(x=10, y=185)
 
 inv_valor_ = Label(frameBaixo, relief=FLAT, width=22, anchor=NW, font=("Verdana 12"), bg=co1, fg=co4)
 inv_valor_.place(x=10, y=215)
+
+#Total dizimo
+dizimo_ = Label(frameBaixo, text="Dízimo:  ", relief=FLAT, width=45, anchor=NW, font=("Verdana 10"), bg=co9, fg=co0)
+dizimo_.place(x=10, y=255)
+
+dizimo_valor_ = Label(frameBaixo, relief=FLAT, width=22, anchor=NW, font=("Verdana 12"), bg=co1, fg=co4)
+dizimo_valor_.place(x=10, y=285)
 
 
 

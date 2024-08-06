@@ -11,5 +11,7 @@ porcentagem20 = (salario / 100) * 20
 
 print("========================================\nSeus números de 50% e 30% e 20%\n=========================")
 print(f"Necessidades: R$ {porcentagem50:.2f}")
-print(f"Investimento: R$ {porcentagem30:.2f}")
-print(f"Lazer/Utilizável: R$ {porcentagem20:.2f}")
+print(f"Gastos: R$ {porcentagem30:.2f}")
+print(f"Investimentos: R$ {porcentagem20:.2f}")
+print("========================================")
+

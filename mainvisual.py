@@ -8,14 +8,14 @@ def calcular():
     salario = float(e_valor_quantia.get())
 
     porcentagemdizimo = (salario / 100) * 10
-    porcentagem50 = (salario / 100) * 50
+    porcentagem40 = (salario / 100) * 40
     porcentagem30 = (salario / 100) * 30
-    porcentagem10 = (salario / 100) * 10
+    porcentagem20 = (salario / 100) * 20
 
 
-    necessidades_valor_["text"] = (f"R$ {porcentagem50:.2f}")
+    necessidades_valor_["text"] = (f"R$ {porcentagem40:.2f}")
     gastos_valor_["text"] = (f"R$ {porcentagem30:.2f}")
-    inv_valor_["text"] = (f"R$ {porcentagem10:.2f}")
+    inv_valor_["text"] = (f"R$ {porcentagem20:.2f}")
     dizimo_valor_["text"] = (f"R$ {porcentagemdizimo:.2f}")
 
 
@@ -37,7 +37,7 @@ co11 = "#f2f4f2"
 
 #Criando Janela
 janela = Tk()
-janela.title("")
+janela.title("Planejador Financeiro")
 janela.geometry("250x500")
 janela.configure(background=co1)
 janela.resizable(width=FALSE, height=FALSE)
@@ -83,7 +83,7 @@ botao_calcular = Button(frameMeio,command=calcular, text="Calcular", width=10, h
 botao_calcular.place(x=150, y=40)
 
 #Frame de Baixo
-textofixo_ = Label(frameBaixo, text="Seu orçamento organizado:  ", relief=FLAT, width=45, anchor=NW, font=("Verdana 10"), bg=co3, fg=co1)
+textofixo_ = Label(frameBaixo, text="Seu salário organizado:  ", relief=FLAT, width=45, anchor=NW, font=("Verdana 10"), bg=co3, fg=co1)
 textofixo_.place(x=0, y=0)
 
 #Total necessidades

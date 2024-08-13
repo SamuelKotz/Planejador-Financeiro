@@ -4,19 +4,34 @@ from PIL import Image, ImageTk
 
 #Definindo Funções de cálculos
 def calcular():
+
+    if(e_valor_vt.get() == ""):
+        salario = float(e_valor_quantia.get())
+
+        porcentagemdizimo = (salario / 100) * 10
+        porcentagemnecessidades = (salario / 100) * 40
+        porcentagemgastos = (salario / 100) * 30
+        porcentageminv = (salario / 100) * 20
+
+
+        necessidades_valor_["text"] = (f"R$ {porcentagemnecessidades:.2f}")
+        gastos_valor_["text"] = (f"R$ {porcentagemgastos:.2f}")
+        inv_valor_["text"] = (f"R$ {porcentageminv:.2f}")
+        dizimo_valor_["text"] = (f"R$ {porcentagemdizimo:.2f}")
+    else:
+        salario = float(e_valor_quantia.get())
+        vale = float(e_valor_vt.get())
+
+        porcentagemdizimo = (salario / 100) * 10
+        porcentagemnecessidades = vale + (salario / 100) * 30
+        porcentagemgastos = (salario / 100) * 40
+        porcentageminv = (salario / 100) * 20
+
+        necessidades_valor_["text"] = (f"R$ {porcentagemnecessidades:.2f}")
+        gastos_valor_["text"] = (f"R$ {porcentagemgastos:.2f}")
+        inv_valor_["text"] = (f"R$ {porcentageminv:.2f}")
+        dizimo_valor_["text"] = (f"R$ {porcentagemdizimo:.2f}")
     
-    salario = float(e_valor_quantia.get())
-
-    porcentagemdizimo = (salario / 100) * 10
-    porcentagem40 = (salario / 100) * 40
-    porcentagem30 = (salario / 100) * 30
-    porcentagem20 = (salario / 100) * 20
-
-
-    necessidades_valor_["text"] = (f"R$ {porcentagem40:.2f}")
-    gastos_valor_["text"] = (f"R$ {porcentagem30:.2f}")
-    inv_valor_["text"] = (f"R$ {porcentagem20:.2f}")
-    dizimo_valor_["text"] = (f"R$ {porcentagemdizimo:.2f}")
 
 
 #Definindo Cores
@@ -38,7 +53,7 @@ co11 = "#f2f4f2"
 #Criando Janela
 janela = Tk()
 janela.title("Planejador Financeiro")
-janela.geometry("250x500")
+janela.geometry("250x530")
 janela.configure(background=co1)
 janela.resizable(width=FALSE, height=FALSE)
 
@@ -51,7 +66,7 @@ style.theme_use("clam")
 frameCima = Frame(janela, width=300, height=50, bg=co1, relief="flat")
 frameCima.grid(row=0, column=0)
 
-frameMeio = Frame(janela, width=300, height=90, bg=co1, relief="flat")
+frameMeio = Frame(janela, width=300, height=140, bg=co1, relief="flat")
 frameMeio.grid(row=1, column=0)
 
 frameBaixo = Frame(janela, width=300, height=360, bg=co9, relief="flat")
@@ -78,6 +93,11 @@ valor_quantia = Label(frameMeio, text="Qual a sua renda mensal?", height=1, anch
 valor_quantia.place(x=7, y=15)
 e_valor_quantia = Entry(frameMeio, width=10, font=("Ivy 14"), justify="center", relief="solid")
 e_valor_quantia.place(x=10, y=40)
+
+valor_vt = Label(frameMeio, text="Qual o seu vale-ticket?", height=1, anchor=NW, font=("Ivy 10 bold"), bg=co1, fg=co4)
+valor_vt.place(x=7, y=70)
+e_valor_vt = Entry(frameMeio, width=10, font=("Ivy 14"), justify="center", relief="solid")
+e_valor_vt.place(x=10, y=95)
 
 botao_calcular = Button(frameMeio,command=calcular, text="Calcular", width=10, height=1, font=("Ivy 10 bold"), relief="solid", overrelief="ridge")
 botao_calcular.place(x=150, y=40)

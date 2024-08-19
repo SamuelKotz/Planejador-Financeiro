@@ -10,8 +10,8 @@ def calcular():
 
         porcentagemdizimo = (salario / 100) * 10
         porcentagemnecessidades = (salario / 100) * 40
-        porcentagemgastos = (salario / 100) * 30
-        porcentageminv = (salario / 100) * 20
+        porcentagemgastos = (salario / 100) * 40
+        porcentageminv = (salario / 100) * 10
 
 
         necessidades_valor_["text"] = (f"R$ {porcentagemnecessidades:.2f}")
@@ -23,9 +23,9 @@ def calcular():
         vale = float(e_valor_vt.get())
 
         porcentagemdizimo = (salario / 100) * 10
-        porcentagemnecessidades = vale + (salario / 100) * 30
+        porcentagemnecessidades = vale + (salario / 100) * 40
         porcentagemgastos = (salario / 100) * 40
-        porcentageminv = (salario / 100) * 20
+        porcentageminv = (salario / 100) * 10
 
         necessidades_valor_["text"] = (f"R$ {porcentagemnecessidades:.2f}")
         gastos_valor_["text"] = (f"R$ {porcentagemgastos:.2f}")
